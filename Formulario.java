@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.event.*;
 
+/* Esta es una practica en java de una interfaz grafica
+SOLO ES UN EJEMPLO, actualmente estoy estudiando java */
+
 public class Formulario extends JFrame implements ActionListener{
 
  private JTextField textfield1;
