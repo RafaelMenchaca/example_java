@@ -5,7 +5,7 @@ public class Formulario extends JFrame implements ActionListener{
 
  private JTextField textfield1, textfield2;
  private JLabel label1, label2, label3;
- private JButton boton1, boton2;
+ private JButton boton1, boton2, boton3;
 
  public Formulario(){
   setLayout(null);
@@ -35,10 +35,15 @@ public class Formulario extends JFrame implements ActionListener{
   boton1.addActionListener(this);
 
   boton2 = new JButton("Restar");
-  boton2.setBounds(10,150,100,30);
+  boton2.setBounds(10,120,100,30);
   add(boton2);
   boton2.addActionListener(this);
- }
+
+  boton3 = new JButton("Multiplicar");
+  boton3.setBounds(10,160,100,30);
+  add(boton3);
+  boton3.addActionListener(this);
+  }
 
  public void actionPerformed(ActionEvent e){
   if(e.getSource() == boton1){
@@ -51,7 +56,7 @@ public class Formulario extends JFrame implements ActionListener{
 
     label3.setText("Resultado: " + resultado);
 
-  }else{
+  }else if(e.getSource() == boton2){
     int valor1 = 0, valor2 = 0, resultado =  0;
 
     valor1 = Integer.parseInt(textfield1.getText());
@@ -59,21 +64,18 @@ public class Formulario extends JFrame implements ActionListener{
 
     resultado = valor1 - valor2;
     label3.setText("Resultado " + resultado);
+
+  }else{
+    int valor1 = 0, valor2 = 0, resultado =  0;
+
+    valor1 = Integer.parseInt(textfield1.getText());
+    valor2 = Integer.parseInt(textfield2.getText());
+
+    resultado = valor1 * valor2;
+    label3.setText("Resultado " + resultado);
+
   }
  }
-
- // public void actionPerformed(ActionEvent e){
- //  if(e.getSource() == boton2){
- //    int valor1 = 0, valor2 = 0, resultado = 0;
- //
- //    valor1 = Integer.parseInt(textfield1.getText());
- //    valor2 = Integer.parseInt(textfield2.getText());
- //
- //    resultado = valor1 - valor2;
- //
- //    label3.setText("Resultado: " + resultado);
- //  }
- // }
 
  public static void main(String args[]){
   Formulario formulario1 = new Formulario();
